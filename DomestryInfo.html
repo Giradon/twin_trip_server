@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Twin-Trip</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+    <link rel="shortcut icon" href="assets/css/images/logo_small.png">
+    
+    <!--기존 템플릿 css 설정-->
+    
+	
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/materialize.min.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/slick-theme.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.css">
+	<link rel="stylesheet" href="assets/css/owl.transitions.css">
+	<link rel="stylesheet" href="assets/css/lightbox.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+    <!--pagebutton Bootstrap cdn css 설정-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <style>
+        /*블로그 부분*/
+        .page-item a.on:focus  {color:#ff0000; font-weight:bold;}
+
+        tr{margin:15px; padding:15px;}
+        .td-one{width: 2%; padding-bottom:3px}
+        .td-two{width: 5%;}
+        .td-two a{color: black;}
+        .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px}
+
+        /*지도 부분*/
+        .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+        .wrap * {padding: 0;margin: 0;}
+        .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+        .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+        .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+        .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+        .info .close:hover {cursor: pointer;}
+        .info .body {position: relative;overflow: hidden;}
+        .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+        .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+        .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+        .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+        .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+        .info .link {color: #5085BB;}
+    </style>
+</head>
+
+<body>
+
+     <!-- navbar -->
+     <div class="navbar">
+        <div class="container">
+            <div class="panel-control-left">
+                <a href="#" data-activates="slide-out-left" class="sidenav-control"><i class="fa fa-align-left"></i></a>
+            </div>
+            <div class="site-title">
+                <a href="http://twintrip.site" class="logo"><h1>Twin-Trip</h1></a>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+
+    <!-- process -->
+    <div class="process-app app-pages app-section">
+        <div class="container">
+            <div class="pages-title">
+                <h3 id="title" style="margin-top:0;"></h3> <!--h3 가운데 맞춤 설정해주기-->
+            </div>
+            <div class="row" style="display:flex">
+                <div class="col s12">
+                    <ul class="tabs", style="width:100%; border-radius: 10px" >
+                        <li class="tab col s6"><a href="#process1">블로그</a></li>
+                        <li class="tab col s6"><a href="#process3">길찾기</a></li>
+                    </ul>
+                    
+
+                    <div id="process1" style="display:block;">
+                        <div style="width:100%; height:150%;" >
+  
+                            <!-- 테이블 속성 정의 -->
+                            <table class="bordered" id="table" style="border-spacing:10px; border-collapse:separate; margin-top:30px;">
+                                <tbody id="dyn_tbody" style="color:#1a1a1a">
+                                </tbody>
+                            </table>
+  
+                            <!-- 페이징 속성 정의 / box-shadow 삭제하기 위해 nav 대신 div 사용-->
+                            <div aria-label="Page navigation example" style="background-color:#ffff; margin-top:30px;">		
+                                <ul id="dyn_ul" class="pagination" style="display:flex; justify-content:center">
+                                <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>	    
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="process3">
+                        <div id="map" style="width:100%;height:350px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
+						</div>
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end process -->
+
+
+    <!--블로그 script-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   -->
+
+    <!-- Jquery CDN 로드 : 항상 최신 버전 사용 -->    
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
+
+     <!-- 내부 JS 지정 -->
+     <script src="https://code.jquery.com/jquery-3.6.0.js" 
+     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+     crossorigin="anonymous">    
+     </script>
+
+     <!-- 내부 JS 지정 -->
+     <script src="https://code.jquery.com/jquery-3.6.0.js" 
+     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+     crossorigin="anonymous">    
+    </script>
+
+    <script>
+        
+        /* [html 최초 로드 및 이벤트 상시 대기 실시] */
+        window.onload = function() {
+            console.log("");
+            console.log("[window onload] : [start]");
+            console.log(""); 
+
+            // 동적으로 테이블 tbody tr 행 생성 실시
+            tableInsert();
+        };
+
+        /* [테이블 리스트 전역 변수 선언 실시] */
+        
+        const tableList = []; // tableInsert 함수에서 for문을 돌면서 삽입 실시
+        const tableList2 = []; // tableInsert 함수에서 for문을 돌면서 삽입 실시
+        const pageList = 5; // 한개의 페이지에 보여질 목록 개수
+        const pageMax = 5; // 최대 생성될 페이지 개수 (페이지를 더보려면 이전, 다음 버튼 클릭해야함)    	
+        var idx = 0; //idx 값 확인 후 동적 페이지 전환 및 데이터 표시
+        var page = 1; //생성 시작할 페이지 번호
+
+        /* [tbody tr 동적 삽입 이벤트 수행 함수] */    	
+        function tableInsert(){
+            console.log("");
+            console.log("[tableInsert] : [start]"); 
+            console.log("");
+
+
+            // [ajax 통신 >> tableList 테이블 데이터가 리스트에 포함된 경우]
+            // pageInsert(page);
+
+            //#######################################데이터 json으로 처리하는 부분 #####################################
+
+            getParameter = (key) => {
+            // Address of the current window
+                address = window.location.search
+                // Returns a URLSearchParams object instance
+                parameterList = new URLSearchParams(address)
+                // Returning the respected value associated
+                // with the provided key
+                return parameterList.get(key)
+            }	
+
+            $("#title").append(getParameter("query"));
+
+            // alert("Jquery to kakao search API")
+            // 불러오고자 하는 다음 검색 페이지 수
+            for(let i = 1; i < 11; i++)
+            {
+                $.ajax({
+                    method: "GET",
+                    // for (let i=1; i<10; i++)
+                    // {sum += i url: "https://dapi.kakao.com/v2/search/blog?&query=" + "보성녹차밭" + "&page={i}"},
+                    url: "https://dapi.kakao.com/v2/search/blog?&query=" + getParameter("query") + "&page=" + i,
+                    data: {query: getParameter("query")},
+                    headers: {Authorization: "KakaoAK 4204c6043e8cf14620a61baad8bba48c" },
+                    async: false
+                }).done(function (msg) {    
+                        console.log(msg) 
+                    // 1P_10개 contents X {idx}개 
+                    for (idx=0; idx < 10 ; idx=idx+1){
+                        var jsonObject = {"thumbnail": msg.documents[idx].thumbnail, "url": msg.documents[idx].url, "title":msg.documents[idx].title,"contents":msg.documents[idx].contents};
+                        tableList.push(jsonObject);
+                    }
+                });   
+            }
+            
+            
+            // [테이블 리스트에 저장된 데이터 확인]
+            console.log("");
+            console.log("[tableInsert] : [list] : " + JSON.stringify(tableList)); 
+            console.log("");
+
+            // [테이블 행 개수에따라 페이징 처리 실시]
+            pageInsert(page);
+        };
+
+
+        /* [페이징 처리 이벤트 수행 함수] */
+        function pageInsert(value){
+            console.log("");
+            console.log("[pageInsert] : [start] : " + value); 
+            console.log("");
+
+
+            // [페이징 목록 초기화 실시]
+            $("#dyn_ul").empty();
+
+
+            // [생성된 테이블 tr 개수 확인 >> 페이징 처리 5개씩 목록 자름]    		
+            var startIndex = value; // 생성 시작 페이지    		
+            //var endIndex = $("#dyn_tbody tr").length; // tbody에 동적으로 추가된 tr 개수 확인
+            var endIndex = tableList.length; // 배열에 있는 길이 확인
+            console.log("");
+            console.log("[pageInsert] : [startIndex] : " + startIndex); 
+            console.log("[pageInsert] : [endIndex] : " + endIndex); 
+            console.log("");
+
+
+            // [tr 개수에 따라 페이징 해야할 개수 확인]
+            var pageCount = 0;
+            var pagePlus = 0;
+            if(endIndex > pageList){ // tr 행 개수가 5 이상인 경우 (임의로 설정)
+                pageCount = Math.floor(endIndex / pageList); //생성될 페이지 수 (소수점 버림)
+                pagePlus = endIndex % pageList; //추가 나머지 자식 수
+                if(pagePlus > 0){ //추가 자식수가 있는경우 >> 페이지 추가
+                    pageCount = pageCount + 1;
+                }
+                console.log("");
+                console.log("[pageInsert] : [pageCount] : " + pageCount); 
+                console.log("[pageInsert] : [pagePlus] : " + pagePlus); 
+                console.log("");
+            }
+
+
+            // [생성될 페이지 번호가 전체 생성되야하는 길이보다 크거나 작은지 확인]
+            if(startIndex > pageCount){ //길이 초과 시 기존꺼로 다시 저장
+                startIndex = page;
+            }
+            else if(startIndex < 0){ //길이 미만 시 기존꺼로 다시 저장
+                startIndex = page;
+            }
+            else {
+                page = startIndex;
+            }
+
+
+            // [동적 ul 페이징 처리 실시]
+            if(pageCount == 1){ //생성해야할 페이지가 1페이지인 경우
+                var insertUl = "<li class='page-item'>"; // 변수 선언
+                insertUl += insertUl + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage(1);'>";
+                insertUl += insertUl + i;
+                insertUl += insertUl + "</a></li>";
+                $("#dyn_ul").append(insertUl); //jquery append 사용해 동적으로 추가 실시      			
+            }
+            else if(pageCount >= 2){ //생성해야할 페이지가 2페이지 이상인 경우
+                // 이전 페이지 추가 실시 
+                var insertSTR = "<li class='page-item'>"; // 변수 선언
+                insertSTR = insertSTR + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage("+"-1"+");'>";
+                insertSTR = insertSTR + "Prev";
+                insertSTR = insertSTR + "</a></li>";
+                $("#dyn_ul").append(insertSTR); //jquery append 사용해 동적으로 추가 실시      			
+
+                // 특정 1, 2, 3 .. 페이지 추가 실시
+                var count = 1;
+                for(var i=startIndex; i<=pageCount; i++){
+                    if(count > pageMax){ //최대로 생성될 페이지 개수가 된 경우 
+                        page = i - pageMax; //생성된 페이지 초기값 저장 (초기 i값 4 탈출 인경우 >> 1값 저장)
+                        break; //for 반복문 탈출
+                    }
+                    var insertUl = "<li class='page-item'>"; // 변수 선언
+                    insertUl = insertUl + "<a class='page-link on' href='javascript:void(0)' onclick = 'newPage("+i+");'>";
+                    insertUl = insertUl + String(i);
+                    insertUl = insertUl + "</a></li>";
+                    $("#dyn_ul").append(insertUl); //jquery append 사용해 동적으로 추가 실시  
+                    count ++;
+                }
+
+                // 다음 페이지 추가 실시
+                var insertEND = "<li class='page-item'>"; // 변수 선언
+                insertEND = insertEND + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage("+"0"+");'>";
+                insertEND = insertEND + "Next";
+                insertEND = insertEND + "</a></li>";
+                $("#dyn_ul").append(insertEND); //jquery append 사용해 동적으로 추가 실시
+            }
+
+
+            // [페이징 완료 후 >> tr 개수 전체 삭제 >> 페이징 개수에 맞게 다시 표시 실시]
+            $("#dyn_tbody").empty(); //tbody tr 전체 삭제 실시
+
+
+            // [새롭게 페이지 목록 리스트 처리 실시]
+            newPage(startIndex);
+        };
+
+
+        /* [tbody tr 동적 삽입 이벤트 수행 함수] */    	
+        function newPage(pageCurrent){
+            // [pageCurrent [-1] >> 이전 / pageCurrent [1 이상] >> 일반 / pageCurrent [0] >> 다음]
+            console.log("");
+            console.log("[newPage] : [start]"); 
+            console.log("[newPage] : [page] : " + pageCurrent); 
+            console.log("");
+
+            // [새롭게 테이블 tbody tr 데이터 생성 실시]
+            if(pageCurrent == -1){ // 이전 페이지
+                $("#dyn_tbody").empty(); //tbody tr 전체 삭제 실시
+
+                // [새롭게 페이징 처리 실시]
+                var newIdx = page - pageMax;
+
+                // [테이블 데이터에 따라 페이징 처리 실시]
+                pageInsert(newIdx); //표시될 페이지 번호 전송
+            } 
+            else if(pageCurrent == 0){ // 다음 페이지
+                $("#dyn_tbody").empty(); //tbody tr 전체 삭제 실시
+
+                // [새롭게 페이징 처리 실시]
+                var newIdx = page + pageMax;
+
+                // [테이블 데이터에 따라 페이징 처리 실시]
+                pageInsert(newIdx); //표시될 페이지 번호 전송
+            }
+            else { // 일반 테이블 목록 리스트 갱신
+                $("#dyn_tbody").empty(); //tbody tr 전체 삭제 실시
+
+                // 저장된 idx 에서 페이지 수를 곱해서 새로운 idx 지정
+                // [1페이지 클릭 >> (1*5) -5 = 0 시작]
+                // [2페이지 클릭 >> (2*5) -5 = 5 시작]
+                idx = (pageCurrent * pageList) - pageList;
+                
+                var checkCount = 1;
+                for(var i=idx; i<tableList.length; i++){ //반복문을 수행하면서 tbody에 tr데이터 삽입 실시
+                    if(checkCount > pageList){ //한페이지에 표시될 목록을 초과한 경우
+                        return;
+                    }
+
+
+                    // json 데이터 파싱 실시
+                    var jsonObject = JSON.parse(JSON.stringify(tableList[i])); //각 배열에 있는 jsonObject 참조
+                    var thumbnail = jsonObject.thumbnail;
+                    var url = jsonObject.url;
+                    var title = jsonObject.title;
+                    var contents = jsonObject.contents;
+
+
+                    //###################################################################################
+                    //################################ 실질적 삽입되는 부분 ###############################
+                    //###################################################################################
+
+                    // 동적으로 리스트 추가
+                    var insertTr = ""; // 변수 선언
+                    // insertTr += "<tr><td rowspan=2><img src='" + thumbnail + "'/>" + "</td>"; // body 에 남겨둔 예시처럼 데이터 삽입
+                    if (thumbnail == ""){insertTr += "<tr><td class='td-one' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
+                    else {insertTr += "<tr><td class='td-one' rowspan=2><img src='" + thumbnail + "'/>" + "</td>";} // body 에 남겨둔 예시처럼 데이터 삽입
+                    insertTr += "<td class='td-two'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; // body 에 남겨둔 예시처럼 데이터 삽입
+                    insertTr += "<tr><td class='td-three'>" + contents + "</td></tr>";
+
+
+                    // jquery append 사용해 동적으로 추가 실시
+                    $("#dyn_tbody").append(insertTr);  
+
+
+                    // 카운트 횟수 증가 		
+                    checkCount ++;	
+                }							
+            }
+        };
+        
+    </script>
+
+    <!--블로그 script end-->
+
+
+
+	<!-- 지도 script -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=1571e1354d772dc5484412f10911fd3b&libraries=services"></script>
+	<script>
+     
+        getParameter = (key) => {
+            // Address of the current window
+                address = window.location.search
+                // Returns a URLSearchParams object instance
+                parameterList = new URLSearchParams(address)
+                // Returning the respected value associated
+                // with the provided key
+                return parameterList.get(key)
+            }
+    
+        
+    
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+            mapOption = { 
+                center: new kakao.maps.LatLng(33.451475, 126.570528),// 지도의 중심좌표 
+                level: 3 // 지도의 확대 레벨
+            }; 
+    
+         // 지도 생성    
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+        var geocoder = new kakao.maps.services.Geocoder();
+    
+        // 장소 검색 객체 생성 
+        var ps = new kakao.maps.services.Places(); 
+
+        // 키워드로 장소 검색  
+        ps.keywordSearch(getParameter("Search_Word"), placesSearchCB); 
+        
+    
+        // 키워드 검색 완료 시 호출되는 콜백함수 
+        function placesSearchCB (data, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+    
+                // 검색된 장소 위치를 기준으로 지도범위 재설정 위해 
+                // LatLngBounds 객체에 좌표추가 
+                var bounds = new kakao.maps.LatLngBounds();
+                
+                // 검색시 최상단에 뜨는 장소만 나오도록 함 data[0]
+                displayMarker(data[0]);    
+                bounds.extend(new kakao.maps.LatLng(data[0].y, data[0].x));
+                }       
+    
+                // 검색된 장소 위치 기준으로 지도범위 재설정
+                map.setBounds(bounds);
+            } 
+        
+    
+        var overlay;
+    
+        // 지도에 마커 표시하는 함수
+        function displayMarker(place) {
+            // 마커 생성하고 지도에 표시
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: new kakao.maps.LatLng(place.y, place.x) 
+            });
+    
+    
+            searchDetailAddrFromCoords(marker.getPosition(), function(result, status) {
+                var address = !!result[0].road_address ? '<div class="ellipsis" style="white-space: initial;">' + result[0].road_address.address_name + '</div>' : '';
+                address += '<div class="ellipsis" style="white-space: initial;">지번 : ' + result[0].address.address_name + '</div>';
+    
+  
+                // 커스텀 오버레이 부분
+                var content = '<div class="wrap">' + 
+                        '    	<div class="info">' + 
+                        '       	<div class="title">' + 
+                                    	getParameter("query") + 
+                        '            	<div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+                        '        	</div>' + 
+                        '            	 <div style="margin: 13px;  padding: 0;">' +
+                                                    address +
+                                        '<div><a href="https://map.kakao.com/link/to/'+getParameter("Search_Word")+','+place.y+','+place.x+'" target="_blank" class="link" style="white-space: initial;">길찾기 바로가기</a></div>'+
+                        '           </div>' + 
+                        '    </div>' +    
+                        '</div>';
+    
+                        
+                // 마커 위에 커스텀 오버레이 표시(css 이용 위치 설정)
+                overlay = new kakao.maps.CustomOverlay({
+                    content: content,
+                    map: map,
+                    position: marker.getPosition()       
+                });
+    
+                // 마커를 클릭했을 때 커스텀 오버레이를 표시
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    overlay.setMap(map);
+                });
+                
+            });
+    
+    
+    
+        }
+       
+        var marker = new kakao.maps.Marker({
+            map: map, 
+            position: new kakao.maps.LatLng(33.450701, 126.570667)
+        });
+    
+    
+        // 커스텀 오버레이를 닫기 위해 호출되는 함수
+        function closeOverlay() {
+            overlay.setMap(null);     
+        }
+    
+        
+        function searchAddrFromCoords(coords, callback) {
+            // 좌표로 행정동 주소 정보 요청
+            geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
+        }
+    
+        function searchDetailAddrFromCoords(coords, callback) {
+            // 좌표로 법정동 상세 주소 정보 요청
+            geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+        }
+    
+    </script>
+    
+    <!-- 지도 script end-->
+    
+
+</body>
+
+</html>

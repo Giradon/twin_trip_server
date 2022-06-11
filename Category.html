@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>TwinTrip</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="HandheldFriendly" content="True">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="shortcut icon" href="assets/css/images/logo_small.png">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+	</head>
+	<body class="is-preload">
+
+		<!-- header -->
+		<section id="header" >
+			<div class="navbar">
+				<div class="container">
+					<div class="panel-control-left">
+						<a href="#" data-activates="slide-out-left" class="sidenav-control"><i class="fa fa-align-left"></i></a>
+					</div>
+					<div>
+						<a style="text-decoration: none !important;" href="http://twintrip.site"><h1>Twin-Trip</h1></a>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- end header -->
+
+		<!-- panel control -->
+		<div class="panel-control-left">
+			<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
+				<li>
+					<div class="photos" >
+						<img src="assets/css/images/logo_1.png" alt="">
+						<h1>Twin-Trip</h1>
+					</div>
+				</li>
+				<li>
+					<a style="text-decoration: none !important;" href="http://twintrip.site"><i class="fa fa-home"></i>홈</a>
+				</li>
+				<li>
+					<a style="text-decoration: none !important;" href="introduction.html"><i class="fa fa-question-circle"></i>트윈트립 소개</a>
+				</li>
+				<li>
+					<a style="text-decoration: none !important;" href="infomation.html"><i class="fa fa-info-circle"></i>버전 정보</a>
+                    
+				</li>
+			</ul>
+		</div>
+		<!-- end panel control -->
+
+        <!-- main -->
+		
+        <section id="work" class="main style3 primary">
+		<div class="container" id = "ImageList">
+			<header>
+				<h2>마음에 드는 이미지를 <U>한번 더</U> 선택하세요</h2>
+				<p>선택하신 이미지와 유사한 국내 관광지를 추천해드립니다.</p>
+			</header>
+			
+                
+
+        <script>
+            getParameter = (key) => {
+            // Address of the current window
+                address = window.location.search
+                // Returns a URLSearchParams object instance
+                parameterList = new URLSearchParams(address)
+                // Returning the respected value associated
+                // with the provided key
+                return parameterList.get(key)
+            }
+            //alert(getParameter('Category'));
+
+                
+            $.ajax({
+                type : 'GET',
+                url : 'http://twintrip.site:5000/getCategory?Category='+getParameter('Category'),
+                success : function(result){
+                        Images = result.split(',');
+                        count = 0;
+						var addHTML = "<div class='tiles2'>"
+                        for( idx = 0; idx <= 8 ; idx=idx+2 ){
+                            addHTML += "<article class='image'>\
+									<span class = 'image'>\
+										<a href='DomestryImage.html?Num="+Images[idx]+"'>\
+											<img src='" + Images[idx] + "'>\
+										</a>\
+									</span>\
+								</article>\
+								<article class='image'>\
+									<span class = 'image'>\
+										<a href='DomestryImage.html?Num="+Images[idx+1]+"'>\
+											<img src='" + Images[idx+1] + "'>\
+										</a>\
+									</span>\
+								</article>"
+						}
+						addHTML += "</div>"
+						$("#ImageList").append(addHTML)
+			},
+			error: function(xhr, ajaxOptions, thrownError){
+			},
+		});
+	</script> 
+
+        
+</div>    
+</div>   
+</section>
+
+
+		<!-- end main -->
+
+		<!-- Footer -->
+			<footer id="footer">
+
+				<!-- Icons -->
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/materialize.min.js"></script>
+			<script src="assets/js/custom.js"></script>
+
+
+
+
+			
+			
+			
+
+	</body>
+</html>
