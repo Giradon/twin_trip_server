@@ -614,7 +614,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out;
 		color: #39454b;
-		font-size: 22px;
+
 	}
 
 	sub {
@@ -2681,8 +2681,9 @@ input, select, textarea {
 		line-height: 1em;
 		padding: 1.5em;
 		background: #39454b;
-		color: rgba(185, 186, 187, 0.5);
+		color: rgb(255, 255, 255);
 		overflow: hidden;
+		font-size: 18px;
 	}
 
 		#footer > * {
@@ -2731,6 +2732,10 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#footer ul.menu li {
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
 				border-left: none;
 				display: block;
 				line-height: inherit;
