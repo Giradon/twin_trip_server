@@ -1,42 +1,52 @@
+<!--DomestryInfo 파일-->
+
 <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-	<meta charset="UTF-8">
-	<title>Twin-Trip</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1">
+<head>	
+	<title>TwinTrip</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1"> -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="HandheldFriendly" content="True">
+ 
+    <!--css setting-->
     <link rel="shortcut icon" href="assets/css/images/logo_small.png">
-    
-    <!--기존 템플릿 css 설정-->
-    
-	
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/materialize.css">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css"> -->
+
+	<!-- 
 	<link rel="stylesheet" href="assets/css/slick.css">
 	<link rel="stylesheet" href="assets/css/slick-theme.css">
 	<link rel="stylesheet" href="assets/css/owl.carousel.css">
 	<link rel="stylesheet" href="assets/css/owl.theme.css">
 	<link rel="stylesheet" href="assets/css/owl.transitions.css">
 	<link rel="stylesheet" href="assets/css/lightbox.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/style.css"> -->
+
+    
 
     <!--pagebutton Bootstrap cdn css 설정-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
     
     <style>
         /*블로그 부분*/
         .page-item a.on:focus  {color:#ff0000; font-weight:bold;}
 
-        tr{margin:15px; padding:15px;}
+        /* tr{margin:15px; padding:15px;}
         .td-one{width: 2%; padding-bottom:3px}
         .td-two{width: 5%;}
         .td-two a{color: black;}
-        .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px}
+        .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px} */
+        
 
         /*지도 부분*/
         .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
@@ -56,68 +66,107 @@
     </style>
 </head>
 
-<body>
+<body class="is-preload">
 
-     <!-- navbar -->
-     <div class="navbar">
-        <div class="container">
-            <div class="panel-control-left">
-                <a href="#" data-activates="slide-out-left" class="sidenav-control"><i class="fa fa-align-left"></i></a>
-            </div>
-            <div class="site-title">
-                <a href="http://twintrip.site" class="logo"><h1>Twin-Trip</h1></a>
+     <!-- header -->
+     <section id="header" >
+        <div class="navbar">
+            <div class="container">
+                <div class="panel-control-left">
+                    <a href="#" data-activates="slide-out-left" class="sidenav-control"><i class="fa fa-align-left"></i></a>
+                </div>
+                <div>
+                    <a style="text-decoration: none !important;" href="http://twintrip.site"><h1>Twin-Trip</h1></a>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- end navbar -->
+    </section>
+    <!-- end header -->
 
-
-    <!-- process -->
-    <div class="process-app app-pages app-section">
-        <div class="container">
-            <div class="pages-title">
-                <h3 id="title" style="margin-top:0;"></h3> <!--h3 가운데 맞춤 설정해주기-->
-            </div>
-            <div class="row" style="display:flex">
-                <div class="col s12">
-                    <ul class="tabs", style="width:100%; border-radius: 10px" >
-                        <li class="tab col s6"><a href="#process1">블로그</a></li>
-                        <li class="tab col s6"><a href="#process3">길찾기</a></li>
-                    </ul>
+    <!-- panel control -->
+		<div class="panel-control-left">
+			<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
+				<li>
+					<div class="photos" >
+						<img src="assets/css/images/logo_1.png" alt="">
+						<h1>Twin-Trip</h1>
+					</div>
+				</li>
+				<li>
+					<a style="text-decoration: none !important;" href="http://twintrip.site"><i class="fa fa-home"></i>홈</a>
+				</li>
+				<li>
+					<a style="text-decoration: none !important;" href="introduction.html"><i class="fa fa-question-circle"></i>트윈트립 소개</a>
+				</li>
+				<li>
+					<a style="text-decoration: none !important;" href="infomation.html"><i class="fa fa-info-circle"></i>버전 정보</a>
                     
+				</li>
+			</ul>
+		</div>
+		<!-- end panel control -->
 
-                    <div id="process1" style="display:block;">
-                        <div style="width:100%; height:150%;" >
-  
-                            <!-- 테이블 속성 정의 -->
-                            <table class="bordered" id="table" style="border-spacing:10px; border-collapse:separate; margin-top:30px;">
-                                <tbody id="dyn_tbody" style="color:#1a1a1a">
-                                </tbody>
-                            </table>
-  
-                            <!-- 페이징 속성 정의 / box-shadow 삭제하기 위해 nav 대신 div 사용-->
-                            <div aria-label="Page navigation example" style="background-color:#ffff; margin-top:30px;">		
-                                <ul id="dyn_ul" class="pagination" style="display:flex; justify-content:center">
-                                <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>	    
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
-                                </ul>
+
+    <!-- main -->
+    <section id="work" class="main style3 primary">
+        <div class="process-app app-pages app-section">
+            <div class="container">
+                <div class="pages-title">
+                    <h3 id="title" style="margin-top:0;"></h3> <!--h3 가운데 맞춤 설정해주기-->
+                </div>
+                <div class="row" style="display:flex">
+                    <div class="col s12">
+                        <ul class="tabs", style="width:100%; border-radius: 10px" >
+                            <li class="tab col s6"><a href="#process1">블로그</a></li>
+                            <li class="tab col s6"><a href="#process3">길찾기</a></li>
+                        </ul>
+                        
+
+                        <div id="process1" style="display:block;">
+                            <div style="width:100%; height:150%;" >
+    
+                                <!-- 테이블 속성 정의 --> <!--table class 내 border-collapse:separate; 삭제-->
+                                <table class="bordered" id="table" style="border-spacing:10px; margin-top:30px;">
+                                    <tbody id="dyn_tbody" style="color:#1a1a1a">
+                                    </tbody>
+                                </table>
+    
+                                <!-- 페이징 속성 정의 / box-shadow 삭제하기 위해 nav 대신 div 사용-->
+                                <div aria-label="Page navigation example" style="background-color:#ffff; margin-top:30px;">		
+                                    <ul id="dyn_ul" class="pagination" style="display:flex; justify-content:center">
+                                    <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>	    
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div id="process3">
-                        <div id="map" style="width:100%;height:350px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
-						</div>
+                        <div id="process3">
+                            <div id="map" style="width:100%;height:350px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
+                            </div>
 
-                        
-                        
+                            
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end process -->
+    </section>
+    <!-- end main -->
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script> <!--지우면 화면에 안 뜸-->
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+
 
 
     <!--블로그 script-->
@@ -131,11 +180,6 @@
     <!-- Jquery CDN 로드 : 항상 최신 버전 사용 -->    
     <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
 
-     <!-- 내부 JS 지정 -->
-     <script src="https://code.jquery.com/jquery-3.6.0.js" 
-     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
-     crossorigin="anonymous">    
-     </script>
 
      <!-- 내부 JS 지정 -->
      <script src="https://code.jquery.com/jquery-3.6.0.js" 
@@ -377,7 +421,7 @@
                     var insertTr = ""; // 변수 선언
                     // insertTr += "<tr><td rowspan=2><img src='" + thumbnail + "'/>" + "</td>"; // body 에 남겨둔 예시처럼 데이터 삽입
                     if (thumbnail == ""){insertTr += "<tr><td class='td-one' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
-                    else {insertTr += "<tr><td class='td-one' rowspan=2><img src='" + thumbnail + "'/>" + "</td>";} // body 에 남겨둔 예시처럼 데이터 삽입
+                    else {insertTr += "<tr><td class='td-one' rowspan=2><img class='table-img' src='" + thumbnail + "'/>" + "</td>";} // body 에 남겨둔 예시처럼 데이터 삽입
                     insertTr += "<td class='td-two'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; // body 에 남겨둔 예시처럼 데이터 삽입
                     insertTr += "<tr><td class='td-three'>" + contents + "</td></tr>";
 
