@@ -614,7 +614,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out;
 		color: #39454b;
-		font-size: 22px;
+
 	}
 
 	sub {
@@ -2509,6 +2509,25 @@ input, select, textarea {
 				background: #f5f6f7;
 			}
 
+		/*0613 blog 추가*/
+		/* .main.style4 {
+			text-align: center;
+			padding: 5em 0 5em 0;
+		}
+
+			.main.style4 .content > header {
+				margin-bottom: 2em;
+			}
+
+			.main.style4.primary {
+				background: #ffffff;
+			}
+
+			.main.style4.secondary {
+				background: #f5f6f7;
+			} */
+
+
 		.main.dark {
 			color: #ffffff;
 		}
@@ -2681,8 +2700,9 @@ input, select, textarea {
 		line-height: 1em;
 		padding: 1.5em;
 		background: #39454b;
-		color: rgba(185, 186, 187, 0.5);
+		color: rgb(255, 255, 255);
 		overflow: hidden;
+		font-size: 18px;
 	}
 
 		#footer > * {
@@ -2731,6 +2751,10 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#footer ul.menu li {
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
 				border-left: none;
 				display: block;
 				line-height: inherit;
@@ -3567,3 +3591,79 @@ input, select, textarea {
 			}
 
 		}
+
+		/*blog page*/
+
+		/*===================
+		  process from style.css
+		===================*/
+		.process-app .tabs .tab {
+			background: #eee;
+		}
+
+		.process-app .tabs .tab a {
+			color: #333;
+			text-transform: capitalize;
+		}
+
+		.process-app .tabs .indicator {
+			background-color: transparent;
+		}
+
+		.process-app .tabs .tab a:hover {
+			background: transparent;
+		}
+
+		.process-app .tabs .tab a.active {
+			color: #fff;
+			background: #444;
+			border-radius: 10px;
+		}
+
+		/* .process-app img {
+			margin-top: 0px;
+			
+			height: 100%;
+		}
+
+		/*ul & li*/
+
+		ul:not(.browser-default){
+			padding-left:0;
+			list-style-type:none
+		}
+		
+		ul:not(.browser-default) 
+		li{
+			list-style-type:none
+		}
+		
+		a{
+			color:#039be5;
+			text-decoration:none; 
+			-webkit-tap-highlight-color:transparent
+		}
+
+		/*row col s6*/
+
+		.row .col.s12{
+			width:100%;
+			margin-left:auto;
+			left:auto;
+			right:auto
+		}
+
+		.row .col.s6{
+			width:50%;
+			margin-left:auto;
+			left:auto;
+			right:auto
+		}
+
+		.row .col{
+			float:left;
+			box-sizing:border-box;
+			padding:0 0.75rem;
+			min-height:1px
+		}
+
