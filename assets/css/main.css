@@ -3289,12 +3289,12 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.tiles2 {
-					margin: -2.25em -30px -30px -2.25em;
+					margin: 0em -2.2em -20px -2.4em;
 				}
 	
 					.tiles2 article {
 						width: calc(50% - 1.25em);
-						margin: 0.75em 0 0 0.75em;
+						margin: 0.24em 0 0 0.24em;
 					}
 	
 						.tiles2 article:hover > .image {
