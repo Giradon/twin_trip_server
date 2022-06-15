@@ -10,14 +10,14 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/*td, tbody, tfoot, thead, tr, th, table 삭제*/
 html, body, div, span, applet, object, p,
 iframe, h1, h2, h3, h4, h5, h6, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
+form, label, legend, caption, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
@@ -1846,7 +1846,7 @@ input, select, textarea {
 	left: 0;
 	right: 0;
 	text-align: center;
-	padding: 9px 0;
+	padding: 12px 0;
 	border-bottom: 1px solid #dedede;
 }
 
@@ -2539,24 +2539,54 @@ input, select, textarea {
 			.main.style3.secondary {
 				background: #f5f6f7;
 			}
+		
 
-		/*0613 blog 추가*/
-		/* .main.style4 {
-			text-align: center;
-			padding: 5em 0 5em 0;
+		/*0615 blog 지도 탭 사이즈 조정*/
+
+		.main2 {
+			display: -moz-flex;
+			/* display: -webkit-flex; */
+			display: -ms-flex;
+			/* display: flex; */
+			position: relative;
+			margin: 0;
+			overflow-x: hidden;
+		}
+		.main2 > .content {
+			width: 45em;
+			max-width: calc(100% - 4em);
+			margin: 0 auto;
+			
+		}
+		
+		.main2 > .content > :last-child {
+			margin-bottom: 0;
 		}
 
-			.main.style4 .content > header {
+		.main2.fullscreen {
+			min-height: 100%;
+		}
+	
+
+
+			.main2.style3-2 {
+				text-align: center;
+				padding: 5em 0 5em 0;
+			}
+			.main2.style3-2 .content > header {
 				margin-bottom: 2em;
 			}
 
-			.main.style4.primary {
+			.main2.style3-2.primary {
 				background: #ffffff;
 			}
 
-			.main.style4.secondary {
+			.main2.style3-2.secondary {
 				background: #f5f6f7;
-			} */
+			}
+		
+		/*0615 blog 지도 탭 사이즈 조정 end*/
+
 
 
 		.main.dark {
@@ -2733,11 +2763,10 @@ input, select, textarea {
 		margin: 0;
 		line-height: 1em;
 		padding: 1.5em;
-		background:#39454b;
-		color:rgb(255, 255, 255);
+		background: #39454b;
+		color: rgb(255, 255, 255);
 		overflow: hidden;
 		font-size: 18px;
-		font-family: "Noto Sans KR";
 	}
 
 		#footer > * {
@@ -2749,7 +2778,7 @@ input, select, textarea {
 		}
 
 			#footer a:hover {
-				color: #d5d5d5;
+				color: #b9babb;
 			}
 
 		#footer ul.menu {
@@ -3912,8 +3941,8 @@ input, select, textarea {
 			border:none
 		}
 		
-		.bordered > td{
+		/* .bordered > td{
 			word-break: break-all;
-		}
+		} */
 
 

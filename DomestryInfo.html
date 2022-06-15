@@ -19,9 +19,7 @@
     <!-- <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/materialize.css">
     <link rel="stylesheet" href="assets/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/css/style.css"> -->
-
-	<!-- 
+    
 	<link rel="stylesheet" href="assets/css/slick.css">
 	<link rel="stylesheet" href="assets/css/slick-theme.css">
 	<link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -74,7 +72,7 @@
 		<!-- end header -->
 
     <!-- main -->
-    <section id="work" class="main style3 primary">
+    <section id="work" class="main2 style3-2 primary">
         <div class="process-app app-pages app-section">
 
             <div class="container2">
@@ -104,9 +102,7 @@
                                 <!-- 페이징 속성 정의 / box-shadow 삭제하기 위해 nav 대신 div 사용-->
                                 <div aria-label="Page navigation example" style="background-color:#ffff; margin-top:30px;">		
                                     <ul id="dyn_ul" class="pagination" style="display:flex; justify-content:center">
-                                    <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>	    
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                                    
                                     </ul>
                                 </div>
                             </div>
@@ -126,7 +122,7 @@
 
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script> <!--지우면 화면에 안 뜸-->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
@@ -140,9 +136,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   -->
-
+   
     <!-- Jquery CDN 로드 : 항상 최신 버전 사용 -->    
     <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
 
@@ -379,24 +373,20 @@
                     var contents = jsonObject.contents;
 
 
-                    //###################################################################################
+                    
                     //################################ 실질적 삽입되는 부분 ###############################
-                    //###################################################################################
+                   
 
                     // 동적으로 리스트 추가
-                    // var insertTr = ""; // 변수 선언
-                    // // insertTr += "<tr><td rowspan=2><img src='" + thumbnail + "'/>" + "</td>"; // body 에 남겨둔 예시처럼 데이터 삽입
-                    // if (thumbnail == ""){insertTr += "<tr><td class='td-one' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
-                    // else {insertTr += "<tr><td class='td-one' rowspan=2><img class='table-img' src='" + thumbnail + "'/>" + "</td>";} // body 에 남겨둔 예시처럼 데이터 삽입
-                    // insertTr += "<td class='td-two'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; // body 에 남겨둔 예시처럼 데이터 삽입
-                    // insertTr += "<tr><td class='td-three'>" + contents + "</td></tr>";
-
+                    
                     var insertTr = ""; // 변수 선언
                     // insertTr += "<tr><td rowspan=2><img src='" + thumbnail + "'/>" + "</td>"; // body 에 남겨둔 예시처럼 데이터 삽입
                     if (thumbnail == ""){insertTr += "<tr><td class='td-img' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
-                    else {insertTr += "<tr><td class='td-img' rowspan=2><img src='" + thumbnail + "'/>" + "</td>";} // body 에 남겨둔 예시처럼 데이터 삽입
-                    insertTr += "<td class='td-title'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; // body 에 남겨둔 예시처럼 데이터 삽입
-                    insertTr += "<tr><td class='td-content'>" + contents + "</td></tr>";
+                    else {insertTr += "<tr><td class='td-img' rowspan=2>" + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";} 
+                    insertTr += "<td class='td-title'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; 
+                    insertTr += "<tr><td class='td-content'>" + '<a href="' + url + '"/a>'+ contents + "</td></tr>";
+                    
+                    //else {insertTr += "<tr><td class='td-img' rowspan=2><img src='" + thumbnail + "'/>" + "</td>";}
 
 
 
