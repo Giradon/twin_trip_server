@@ -38,10 +38,10 @@
         <!-- main -->
         <section id="work" class="main style3 primary">
             <div class="gallery app-pages app-section">
-                <div class="container" id = "MyImageList">
+                <div class="container2" id = "MyImageList">
                     <header>
                         <h2>여행자님을 위한 국내 관광지</h2>
-                        <p></p>
+                        
                     </header>        
         		</div>    
     		</div>
@@ -104,7 +104,7 @@
 								</div>\
                             <p>📌 "+resultJson.Title[idx]+" \
 								<a href='DomestryInfo.html?query="+resultJson.Title[idx]+"&Search_Word="+resultJson.Search_Word[idx]+"'>\
-									<button class = 'btn1' style='float: right;'>자세히보기</button></p>\
+									<button class = 'btn1' style='float: right; z-index:1;'>자세히보기</button></p>\
 								</a>\
                             <p>🗺️ "+resultJson.Location[idx]+"</p>\
                             <p>🏷️ "+resultJson.Keyword[idx]+"</p>\
@@ -232,6 +232,6 @@
 	</body>
 
 	<!-- Top-up -->			
-	<a style="display:scroll;position:fixed;bottom:30px;right:15px;" rel="nofollow"
-	href="#" title="Back to Top"><img src="assets/css/images/topup.png" style= "height:3em" border="0"/></a>
+	<a style="display:scroll;position:fixed;bottom:30px;right:15px;z-index:2;" rel="nofollow"
+	href="#" title="Back to Top"><img src="assets/css/images/topup.png" style= "height:3em" border="0" /></a>
 </html>
