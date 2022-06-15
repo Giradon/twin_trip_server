@@ -1846,7 +1846,7 @@ input, select, textarea {
 	left: 0;
 	right: 0;
 	text-align: center;
-	padding: 12px 0;
+	padding: 9px 0;
 	border-bottom: 1px solid #dedede;
 }
 
@@ -2730,10 +2730,11 @@ input, select, textarea {
 		margin: 0;
 		line-height: 1em;
 		padding: 1.5em;
-		background: #39454b;
-		color: rgb(255, 255, 255);
+		background:#39454b;
+		color:rgb(255, 255, 255);
 		overflow: hidden;
 		font-size: 18px;
+		font-family: "Noto Sans KR";
 	}
 
 		#footer > * {
@@ -2745,7 +2746,7 @@ input, select, textarea {
 		}
 
 			#footer a:hover {
-				color: #b9babb;
+				color: #d5d5d5;
 			}
 
 		#footer ul.menu {
