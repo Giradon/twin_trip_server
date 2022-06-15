@@ -741,7 +741,7 @@ input, select, textarea {
 			left: 50%;
 		}
 
-		input[type="button"]:hover,
+		/* input[type="button"]:hover,
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		.button:hover,
@@ -755,7 +755,7 @@ input, select, textarea {
 		.button:active,
 		button:active {
 			
-		}
+		} */
 
 		input[type="button"].style2,
 		input[type="submit"].style2,
@@ -3789,4 +3789,110 @@ input, select, textarea {
 		@media only screen and (min-width: 0){
 			html{font-size:14px}}
 
+		/*===================
+		  td from m.min.css
+		===================*/
 		
+		td,th{
+			padding:1px 5px;
+			display:table-cell;
+			text-align:left;
+			vertical-align:middle;
+			border-radius:2px
+		}
+
+		
+		/*custom td style*/
+
+        /* tr{margin:15px; padding:15px;}
+        .td-one{width: 2%; padding-bottom:3px}
+        .td-two{width: 5%;}
+        .td-two a{color: black;}
+        .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px} */
+
+        /*pc화면*/
+        @media only screen and (min-width: 768px){
+			.td-img{
+				width: 2%; 
+				padding-bottom:3px; 
+				text-align:center;
+			}
+			.td-img img{
+				height: 20%; 
+				line-height: 130px; 
+				padding-top: 0;
+			}
+			.td-content{
+				width: 20%; 
+				border-bottom: 1px solid #e0e0e0; 
+				padding-bottom:3px;
+			}
+        }
+
+		@media only screen and (min-width: 768px){
+			.td-title, .td-content{
+				font-size: 13pt;
+				line-height: 1.5em;
+			}
+
+		}
+
+        /*모바일 화면*/
+        .td-img{
+			width: 2%; 
+			padding-bottom:3px; 
+			text-align:center;
+		}
+		.td-img img {
+            position: relative;
+            /* display: block; */
+            overflow: hidden;
+            /* padding-top: 50.15%; */
+            text-align: center;
+            font-size: 0;
+        }
+		
+		
+		.td-title{
+            font-size: 12pt;
+        }
+
+        .td-content{
+			border-bottom: 1px solid #e0e0e0; 
+			padding-bottom:3px; 
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;  
+			overflow: hidden;
+			width: 100%;
+			font-size:12pt;
+		}
+
+		/*pagination style*/
+		.pagination li a{
+			color:#444;
+			display:inline-block;
+			font-size:1.2rem;
+			padding:0 10px;
+			line-height:30px
+		}
+        .page-item a.on:focus  {
+			color:#ff0000; 
+			font-weight:bold;
+		}
+
+		/*table*/
+		table{
+			width:100%;
+			display:table
+		}
+
+		table,th,td{
+			border:none
+		}
+		
+		.bordered > td{
+			word-break: break-all;
+		}
+
+
