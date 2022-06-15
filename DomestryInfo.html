@@ -484,8 +484,13 @@
     
     
             searchDetailAddrFromCoords(marker.getPosition(), function(result, status) {
-                var address = !!result[0].road_address ? '<div class="ellipsis" style="white-space: initial;">' + result[0].road_address.address_name + '</div>' : '';
-                address += '<div class="ellipsis" style="white-space: initial;">지번 : ' + result[0].address.address_name + '</div>';
+                var address;
+                    if(result.length > 0 && !!result[0].road_address){
+                        address = '<div class="ellipsis" style="white-space: initial;">' + result[0].road_address.address_name + '</div>';
+                         }
+                        else{
+                        address = '<div class="ellipsis" style="white-space: initial;">' + getParameter("Detail_add") + '</div>';
+                        }
     
   
                 // 커스텀 오버레이 부분
