@@ -15,20 +15,17 @@
         <link rel="shortcut icon" href="assets/css/images/logo_small.png">
 		<link rel="stylesheet" href="assets/css/all.min.css?v=1.1.0" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-
-
 	</head>
+
+
 	<body class="is-preload">
 
 		<!-- header -->
 		<section id="header" >
 			<div class="navbar">
 				<div class="container">
-					<div class="panel-control-left">
-						<a href="#" data-activates="slide-out-left" class="sidenav-control"><i class="fa fa-align-left"></i></a>
-					</div>
 					<div>
-						<a style="text-decoration: none !important;" href="http://twintrip.site"><h1>Twin-Trip</h1></a>
+						<a href="http://twintrip.site"> <img src="assets/css/images/logo_header.png"/></a>
 					</div>
 					
 				</div>
@@ -37,65 +34,31 @@
 
 		<!-- end header -->
 
-		<!-- panel control -->
-		<div class="panel-control-left">
-			<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
-				<li>
-					<div class="photos" >
-						<img src="assets/css/images/logo_1.png" alt="">
-						<h1>Twin-Trip</h1>
-					</div>
-				</li>
-				<li>
-					<a style="text-decoration: none !important;" href="http://twintrip.site"><i class="fa fa-home"></i>홈</a>
-				</li>
-				<li>
-					<a style="text-decoration: none !important;" href="introduction.html"><i class="fa fa-question-circle"></i>트윈트립 소개</a>
-				</li>
-				<li>
-					<a style="text-decoration: none !important;" href="infomation.html"><i class="fa fa-info-circle"></i>버전 정보</a>
-                    
-				</li>
-			</ul>
-		</div>
-		<!-- end panel control -->
 
         <!-- main -->
         <section id="work" class="main style3 primary">
             <div class="gallery app-pages app-section">
-                <div class="container" id = "MyImageList">
+                <div class="container2" id = "MyImageList">
                     <header>
                         <h2>여행자님을 위한 국내 관광지</h2>
-                        <p></p>
-                    </header>
-
-
-           
-        </div>    
-    </div>
-    </section>
+                        
+                    </header>        
+        		</div>    
+    		</div>
+    	</section>
 
 		<!-- end main -->
 
 		<!-- Footer -->
-			<footer id="footer">
+		<footer id="footer">
 
-				<!-- Icons -->
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-					</ul>
+			<!-- Icons -->
+				<ul class="menu">
+					<li><a style="text-decoration: none !important;" href="http://twintrip.site"><i class="fa fa-home"></i> Home</a></li>
+					<li><a style="text-decoration: none !important;" href="introduction.html"><i class="fa fa-question-circle"></i> About Us</a></li>
+				</ul>
+		</footer>
 
-				<!-- Menu -->
-					<ul class="menu">
-						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</footer>
 
 		<!-- Scripts -->
 			<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -139,12 +102,12 @@
 										<img src='" + resultJson.FinalImages[idx]  + "'>\
 									</a>\
 								</div>\
-                            <p>📌"+resultJson.Title[idx]+" \
+                            <p>📌 "+resultJson.Title[idx]+" \
 								<a href='DomestryInfo.html?query="+resultJson.Title[idx]+"&Search_Word="+resultJson.Search_Word[idx]+"'>\
-									<button class = 'btn1' style='float: right;'>자세히보기</button></p>\
+									<button class = 'btn1' style='float: right; z-index:1;'>자세히보기</button></p>\
 								</a>\
-                            <p>🗺️"+resultJson.Location[idx]+"</p>\
-                            <p>🏷️"+resultJson.Keyword[idx]+"</p>\
+                            <p>🗺️ "+resultJson.Location[idx]+"</p>\
+                            <p>🏷️ "+resultJson.Keyword[idx]+"</p>\
                                 </a><br>\
 							</div>\
 						</div>");
@@ -177,7 +140,7 @@
 								preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 							},
 							image: {
-								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+								tError: '마지막 사진입니다.',
 								titleSrc: function(item) {
 									return item.el.attr('title') ;
 								}
@@ -196,7 +159,7 @@
 								preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 							},
 							image: {
-								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+								tError: '마지막 사진입니다.',
 								titleSrc: function(item) {
 									return item.el.attr('title');
 								}
@@ -215,7 +178,7 @@
 								preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 							},
 							image: {
-								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+								tError: '마지막 사진입니다.',
 								titleSrc: function(item) {
 									return item.el.attr('title') ;
 								}
@@ -234,7 +197,7 @@
 								preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 							},
 							image: {
-								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+								tError: '마지막 사진입니다.',
 								titleSrc: function(item) {
 									return item.el.attr('title') ;
 								}
@@ -253,7 +216,7 @@
 								preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 							},
 							image: {
-								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+								tError: '마지막 사진입니다.',
 								titleSrc: function(item) {
 									return item.el.attr('title') ;
 								}
@@ -267,4 +230,8 @@
 		});
 	</script> 
 	</body>
+
+	<!-- Top-up -->			
+	<a style="display:scroll;position:fixed;bottom:30px;right:15px;z-index:2;" rel="nofollow"
+	href="#" title="Back to Top"><img src="assets/css/images/topup.png" style= "height:3em" border="0" /></a>
 </html>

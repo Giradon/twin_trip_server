@@ -10,14 +10,14 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/*td, tbody, tfoot, thead, tr, th, table 삭제*/
 html, body, div, span, applet, object, p,
 iframe, h1, h2, h3, h4, h5, h6, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
+form, label, legend, caption, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
@@ -26,6 +26,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	word-break: keep-all;
+	scroll-behavior:smooth
 	}
 
 article, aside, details, figcaption, figure,
@@ -614,7 +616,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out;
 		color: #39454b;
-		font-size: 22px;
+
 	}
 
 	sub {
@@ -740,12 +742,12 @@ input, select, textarea {
 			left: 50%;
 		}
 
-		input[type="button"]:hover,
+		/* input[type="button"]:hover,
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		.button:hover,
 		button:hover {
-			background-color: #a8cea4;
+			
 		}
 
 		input[type="button"]:active,
@@ -753,8 +755,8 @@ input, select, textarea {
 		input[type="reset"]:active,
 		.button:active,
 		button:active {
-			background-color: #88bc82;
-		}
+			
+		} */
 
 		input[type="button"].style2,
 		input[type="submit"].style2,
@@ -791,13 +793,13 @@ input, select, textarea {
 			}
 
 			button.btn1{
-				width:120px;
-				height: 40px;
+				width:150px;
+				height: 55px;
 				color:rgba(82, 82, 82);
 				background: #ffffff;
 				font-size: 16px;
 				border:none;
-				border-radius: 20px;
+				border-radius: 30px;
 				box-shadow: 0 2px 5px rgba(225, 225, 225, 0.65);
 				transition:0.2s;
 				position: relative;
@@ -806,6 +808,9 @@ input, select, textarea {
 				text-align: center;
 				touch-action: manipulation;
 				white-space: nowrap;
+				font-family: Noto Sans KR;
+				font-weight: 600;
+
 			}
 			
 		
@@ -1055,6 +1060,21 @@ input, select, textarea {
 .gallery img {
 	width: 100%;
 	height: 100%;
+	margin: 1em 0 0 0;
+
+}
+@media screen and (max-width: 736px) {
+
+	.gallery img {
+		margin: 0 0 0 0
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.gallery img {
+		margin: 0 0 0 0
+	}
 
 }
 
@@ -1779,6 +1799,7 @@ input, select, textarea {
 	margin: 0 auto;
 	max-width: 1280px;
 	width: 80%;
+	
   }
   
   @media only screen and (min-width: 601px) {
@@ -1800,7 +1821,31 @@ input, select, textarea {
   *, *:before, *:after {
 	box-sizing: inherit;
   }
+
+  /*===================
+	general
+	===================*/
+	*,
+	*:before,
+	*:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
   
+.container2 {
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 80%;
+	
+	}
+	
+	@media only screen and (max-width: 736px) {
+	.container2 {
+		width: 98%;
+		}
+	}
+	
 
 /*===================
 	navbar
@@ -2392,6 +2437,7 @@ input, select, textarea {
 			width: 45em;
 			max-width: calc(100% - 4em);
 			margin: 0 auto;
+			
 		}
 
 			.main > .content > :last-child {
@@ -2508,6 +2554,55 @@ input, select, textarea {
 			.main.style3.secondary {
 				background: #f5f6f7;
 			}
+		
+
+		/*0615 blog 지도 탭 사이즈 조정*/
+
+		.main2 {
+			display: -moz-flex;
+			/* display: -webkit-flex; */
+			display: -ms-flex;
+			/* display: flex; */
+			position: relative;
+			margin: 0;
+			overflow-x: hidden;
+		}
+		.main2 > .content {
+			width: 45em;
+			max-width: calc(100% - 4em);
+			margin: 0 auto;
+			
+		}
+		
+		.main2 > .content > :last-child {
+			margin-bottom: 0;
+		}
+
+		.main2.fullscreen {
+			min-height: 100%;
+		}
+	
+
+
+			.main2.style3-2 {
+				text-align: center;
+				padding: 5em 0 5em 0;
+			}
+			.main2.style3-2 .content > header {
+				margin-bottom: 2em;
+			}
+
+			.main2.style3-2.primary {
+				background: #ffffff;
+			}
+
+			.main2.style3-2.secondary {
+				background: #f5f6f7;
+			}
+		
+		/*0615 blog 지도 탭 사이즈 조정 end*/
+
+
 
 		.main.dark {
 			color: #ffffff;
@@ -2603,7 +2698,7 @@ input, select, textarea {
 
 			.main.style3 {
 				text-align: center;
-				margin: 2em;
+				margin: -1em 0 -1em 0;
 			}
 			
 			.main.style4 {
@@ -2611,7 +2706,9 @@ input, select, textarea {
 			}
 			
 				.main.style4 h2 {
-					font-size: 1em;
+					font-family: "Noto Sans KR", "sans-serif";
+					
+					font-size: 2.2em !important;
 					line-height: 1em;					
 				}
 		}
@@ -2621,7 +2718,7 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.main > .content {
-				max-width: calc(100% - 1.5em);
+				max-width: calc(100% - 0.2em);
 			}
 
 		}
@@ -2640,6 +2737,7 @@ input, select, textarea {
 
 			.main.style4 h2 {
 				font-size: 3em;
+				color: mediumorchid;
 				line-height: 1em;
 			}
 
@@ -2681,8 +2779,9 @@ input, select, textarea {
 		line-height: 1em;
 		padding: 1.5em;
 		background: #39454b;
-		color: rgba(185, 186, 187, 0.5);
+		color: rgb(255, 255, 255);
 		overflow: hidden;
+		font-size: 18px;
 	}
 
 		#footer > * {
@@ -2731,6 +2830,10 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#footer ul.menu li {
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
 				border-left: none;
 				display: block;
 				line-height: inherit;
@@ -3035,7 +3138,7 @@ input, select, textarea {
 
 				.tiles article {
 					width: calc(48% - 0.75px);
-					margin: 3px 5px 5px 1px;
+					margin: 4px 4px 4px 4px;
 				}
 		}
 
@@ -3251,12 +3354,12 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.tiles2 {
-					margin: -1.25em 0 0 -1.25em;
+					margin: 0em -2.8em -20px -3em;
 				}
 	
 					.tiles2 article {
 						width: calc(50% - 1.25em);
-						margin: 0.75em 0 0 0.75em;
+						margin: 0.24em 0 0 0.24em;
 					}
 	
 						.tiles2 article:hover > .image {
@@ -3567,3 +3670,304 @@ input, select, textarea {
 			}
 
 		}
+
+		/*blog page*/
+
+		/*title h3 간격 조정 from sytle.css*/
+
+		.pages-title .title {
+			font-size: 22px;
+			font-weight: 600;
+		}
+
+
+		/*===================
+		  process from style.css
+		===================*/
+		.process-app .tabs .tab {
+			background: #eee;
+		}
+
+		.process-app .tabs .tab a {
+			color: #333;
+			text-transform: capitalize;
+		}
+
+		.process-app .tabs .indicator {
+			background-color: transparent;
+		}
+
+		.process-app .tabs .tab a:hover {
+			background: transparent;
+		}
+
+		.process-app .tabs .tab a.active {
+			color: #fff;
+			background: #444;
+			border-radius: 10px;
+		}
+
+		.process-app img {
+			margin-top: 0px;
+			
+			height: 100%;
+		}
+
+		html{
+			line-height:1.5;
+			font-family:"Roboto", sans-serif;
+			font-weight:normal;
+			color:rgba(0,0,0,0.87)
+		}
+
+
+		/*ul & li*/
+
+		ul:not(.browser-default){
+			padding-left:0;
+			list-style-type:none
+		}
+		
+		ul:not(.browser-default) 
+		li{
+			list-style-type:none
+		}
+		
+		/*a{
+		/*화면 상단 로고 파란색 글씨*/
+		/* a{
+			color:#039be5;
+			text-decoration:none; 
+			-webkit-tap-highlight-color:transparent
+		} */
+
+		/*row col s6*/
+
+		.row .col.s12{
+			width:100%;
+			margin-left:auto;
+			left:auto;
+			right:auto
+		}
+
+		.row .col.s6{
+			width:50%;
+			margin-left:auto;
+			left:auto;
+			right:auto
+		}
+
+		.row .col{
+			float:left;
+			box-sizing:border-box;
+			padding:0 0.75rem;
+			min-height:1px
+		}
+
+		/*tabs*/
+		@media only screen and (max-width: 992px){
+			.tabs{
+				display:-webkit-flex;
+				display:-ms-flexbox;
+				display:flex}
+			.tabs .tab{
+				-webkit-box-flex:1;
+				-webkit-flex-grow:1;
+				-ms-flex-positive:1;
+				flex-grow:1}
+			.tabs .tab a{
+				padding:0 12px
+			}
+		}
+
+		.tabs{
+			position:relative;
+			overflow-x:auto;
+			overflow-y:hidden;
+			height:48px;
+			width:100%;
+			background-color:#fff;
+			margin:0 auto;
+			white-space:nowrap
+		}
+
+		.tabs .tab a{
+			color:rgba(238,110,115,0.7);
+			display:block;
+			width:100%;
+			height:100%;
+			padding:0 24px;
+			font-size:14px;
+			text-overflow:ellipsis;
+			overflow:hidden;
+			transition:color .28s ease
+		}
+
+		.tabs .tab a:hover,.tabs .tab a.active{
+			background-color:transparent;
+			color:#ee6e73
+		}
+
+		.tabs .tab.disabled a,.tabs .tab.disabled a:hover{
+			color:rgba(238,110,115,0.7);
+			cursor:default
+		}
+
+		.tabs .indicator{
+			position:absolute;
+			bottom:0;
+			height:2px;
+			background-color:#f6b2b5;
+			will-change:left, right
+		}
+
+		.tabs .tab{
+			display:inline-block;
+			text-align:center;
+			line-height:48px;
+			height:48px;
+			padding:0;
+			margin:0;
+			text-transform:uppercase
+		}
+
+
+		/*===================
+			section
+		===================*/
+		.app-section {
+			padding: 2px 10em 0px 10em;
+		}
+		@media screen and (max-width: 736px) {
+
+			.app-section {
+				padding: 0px 0em 0px 0em;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.app-section {
+				padding: 0px 0em 0px 0em;
+			}
+
+		}
+
+		/*html*/
+		html{
+			line-height:1.5;
+			font-family:"Roboto", sans-serif;
+			font-weight:normal;
+			color:rgba(0,0,0,0.87)
+		}
+		
+		@media only screen and (min-width: 0){
+			html{font-size:14px}}
+
+		/*===================
+		  td from m.min.css
+		===================*/
+		
+		td,th{
+			padding:1px 5px;
+			display:table-cell;
+			text-align:left;
+			vertical-align:middle;
+			border-radius:2px
+		}
+
+		
+		/*custom td style*/
+
+        /* tr{margin:15px; padding:15px;}
+        .td-one{width: 2%; padding-bottom:3px}
+        .td-two{width: 5%;}
+        .td-two a{color: black;}
+        .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px} */
+
+        /*pc화면*/
+        @media only screen and (min-width: 768px){
+			.td-img{
+				width: 2%; 
+				padding-bottom:3px; 
+				text-align:center;
+			}
+			.td-img img{
+				height: 20%; 
+				line-height: 130px; 
+				padding-top: 0;
+			}
+			.td-content{
+				width: 20%; 
+				border-bottom: 1px solid #e0e0e0; 
+				padding-bottom:3px;
+			}
+        }
+
+		@media only screen and (min-width: 768px){
+			.td-title, .td-content{
+				font-size: 13pt;
+				line-height: 1.5em;
+			}
+
+		}
+
+        /*모바일 화면*/
+        .td-img{
+			width: 2%; 
+			padding-bottom:3px; 
+			text-align:center;
+		}
+		.td-img img {
+            position: relative;
+            /* display: block; */
+            overflow: hidden;
+            /* padding-top: 50.15%; */
+            text-align: center;
+            font-size: 0;
+        }
+		
+		
+		.td-title{
+            font-size: 12pt;
+        }
+
+        .td-content{
+			border-bottom: 1px solid #e0e0e0; 
+			padding-bottom:3px; 
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;  
+			overflow: hidden;
+			width: 100%;
+			font-size:12pt;
+		}
+
+		/*pagination style*/
+		.pagination li a{
+			color:#444;
+			display:inline-block;
+			font-size:1.2rem;
+			padding:0 10px;
+			line-height:30px
+		}
+        .page-item a.on:focus  {
+			color:#ff0000; 
+			font-weight:bold;
+		}
+
+		/*table*/
+		table{
+			width:100%;
+			display:table
+		}
+
+		table,th,td{
+			border:none
+		}
+		
+		/* .bordered > td{
+			word-break: break-all;
+		} */
+
+
