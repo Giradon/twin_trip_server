@@ -14,7 +14,7 @@
  
     <!--css setting-->
     <link rel="shortcut icon" href="assets/css/images/logo_small.png">
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/materialize.css">
@@ -109,7 +109,7 @@
                         </div>
 
                         <div id="process3">
-                            <div id="map" style="width:100%;height:350px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
+                            <div id="map" style="width:100%;height:450px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
                             </div>          
                         </div> 
                     </div>
@@ -284,7 +284,7 @@
             }
             else if(pageCount >= 2){ //생성해야할 페이지가 2페이지 이상인 경우
                 // 이전 페이지 추가 실시 
-                var insertSTR = "<li class='page-item'>"; // 변수 선언
+                var insertSTR = "<li class='page-prev'>"; // 변수 선언
                 insertSTR = insertSTR + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage("+"-1"+");'>";
                 insertSTR = insertSTR + "Prev";
                 insertSTR = insertSTR + "</a></li>";
@@ -306,7 +306,7 @@
                 }
 
                 // 다음 페이지 추가 실시
-                var insertEND = "<li class='page-item'>"; // 변수 선언
+                var insertEND = "<li class='page-next'>"; // 변수 선언
                 insertEND = insertEND + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage("+"0"+");'>";
                 insertEND = insertEND + "Next";
                 insertEND = insertEND + "</a></li>";
@@ -381,10 +381,14 @@
                     
                     var insertTr = ""; // 변수 선언
                     // insertTr += "<tr><td rowspan=2><img src='" + thumbnail + "'/>" + "</td>"; // body 에 남겨둔 예시처럼 데이터 삽입
-                    if (thumbnail == ""){insertTr += "<tr><td class='td-img' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
-                    else {insertTr += "<tr><td class='td-img' rowspan=2>" + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";} 
-                    insertTr += "<td class='td-title'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; 
-                    insertTr += "<tr><td class='td-content'>" + '<a href="' + url + '"/a>'+ contents + "</td></tr>";
+                    // if (thumbnail == ""){insertTr += "<tr><td class='td-img' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
+                    // else {insertTr += "<tr><td class='td-img' rowspan=2>" + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";} 
+                    
+                    insertTr += "<tr><td class='td-img' rowspan=2>" 
+                                + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";
+                    insertTr += "<td class='td-title'>" + '<a id ="a_title" href="' + url + '"/a>' + title + "</td></tr>"; 
+                    insertTr += "<tr><td class='td-content'>" 
+                                + '<a id ="a_content" href="' + url + '"/a>'+ contents + "</td></tr>";
                     
                     //else {insertTr += "<tr><td class='td-img' rowspan=2><img src='" + thumbnail + "'/>" + "</td>";}
 
