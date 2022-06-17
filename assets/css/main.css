@@ -3417,7 +3417,7 @@ input, select, textarea {
 	  width: 55%; 
 	  }
 	  #banner .images img {
-		height: 100%;
+		height: auto;
 		-moz-object-fit: cover;
 		-webkit-object-fit: cover;
 		-ms-object-fit: cover;
@@ -3503,7 +3503,7 @@ input, select, textarea {
 	  width: 55%; 
 	  }
 	  #banner .images img {
-		height: 100%;
+		height: auto;
 		-moz-object-fit: cover;
 		-webkit-object-fit: cover;
 		-ms-object-fit: cover;
@@ -3589,7 +3589,7 @@ input, select, textarea {
 		width: 55%; 
 		}
 		#banner2 .images img {
-		height: 100%;
+		height: auto;
 		-moz-object-fit: cover;
 		-webkit-object-fit: cover;
 		-ms-object-fit: cover;
