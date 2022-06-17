@@ -3144,11 +3144,11 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.tiles {
-				margin: 30px 0 0 0;
+				margin: -1.5em 0 0 0.45em;
 			}
 
 				.tiles article {
-					width: calc(48% - 0.75px);
+					width: calc(47% - 0.75px);
 					margin: 4px 4px 4px 4px;
 				}
 		}
