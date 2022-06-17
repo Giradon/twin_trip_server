@@ -36,7 +36,7 @@ a {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	word-break: keep-all;
+	word-break: break-all;
 	scroll-behavior:smooth;
 	text-decoration: none;
 	}
@@ -3684,17 +3684,7 @@ input, select, textarea {
 
 		/*blog page*/
 
-		/*title h3 간격 조정 from sytle.css*/
-
-		.pages-title .title {
-			font-size: 22px;
-			font-weight: 600;
-		}
-
-
-		/*===================
-		  process from style.css
-		===================*/
+		/* process from style.css*/
 		.process-app .tabs .tab {
 			background: #eee;
 		}
@@ -3897,7 +3887,7 @@ input, select, textarea {
         .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px} */
 
         /*pc화면*/
-        @media only screen and (min-width: 768px){
+        /* @media only screen and (min-width: 768px){
 			.td-img{
 				width: 2%; 
 				padding-bottom:3px; 
@@ -3921,12 +3911,12 @@ input, select, textarea {
 				line-height: 1.5em;
 			}
 
-		}
+		} */
 
-        /*td 모바일 화면*/
+        /*td*/
         .td-img{
 			width: 2%; 
-			padding-bottom:3px; 
+			/* padding-bottom:3px;  */
 			text-align:center;
 		}
 		.td-img img {
@@ -3940,19 +3930,32 @@ input, select, textarea {
 		
 		
 		.td-title{
-            font-size: 12pt;
+            /* border-top: 4px solid #e0e0e0;  */
+			border-bottom: 4px solid #ffff; 
+			/* padding-bottom:3px;  */
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;  
+			overflow: hidden;
+			width: 100%;
+			font-size:13pt;
+			font-weight: 900;
         }
 
         .td-content{
-			border-bottom: 1px solid #e0e0e0; 
+			border-bottom: 4px solid #ffff; 
 			padding-bottom:3px; 
 			display: -webkit-box;
 			-webkit-line-clamp: 4;
 			-webkit-box-orient: vertical;  
 			overflow: hidden;
 			width: 100%;
-			font-size:12pt;
+			font-size:11pt;
 		}
+
+			td.td-content a#a_content > b{
+				font-weight:normal;
+			}
 
 		/*pagination style*/
 		.pagination .page-item{
@@ -3964,10 +3967,11 @@ input, select, textarea {
 				line-height:30px;
 				background: #eee;
 				border-radius: 5px;
+				font-weight: 700;
 		}
 
 		.pagination .page-prev, .page-next{
-			color:#444;
+			color:rgb(0, 0, 0);
 			display:inline-block;
 			font-size:1rem;
 			padding:0 10px;
@@ -3975,6 +3979,7 @@ input, select, textarea {
 			line-height:30px;
 			background: #eee;
     		border-radius: 5px;
+			font-weight: 900;
     		
 		}
         .page-item a.on:focus  {
@@ -3983,17 +3988,19 @@ input, select, textarea {
 		}
 
 		/*table*/
-		table{
+		/* table{
 			width:100%;
-			display:table
+			display:table;
 		}
 
 		table,th,td{
-			border:none
-		}
+			border:none;
+		} */
 		
 		/* .bordered > td{
 			word-break: break-all;
 		} */
 
+		
 
+		
