@@ -601,7 +601,7 @@ input, select, textarea {
 	h2 {
 		font-size: 1.8em;
 		line-height: 1.5em;
-		letter-spacing: -0.05em;
+		letter-spacing: -0.03em;
 	}
 
 	@media screen and (max-width: 736px) {
