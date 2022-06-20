@@ -47,6 +47,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	
 }
 
 ol, ul {
@@ -2605,6 +2606,7 @@ input, select, textarea {
 
 			.main2.style3-2.primary {
 				background: #ffffff;
+				min-height: 100%
 			}
 
 			.main2.style3-2.secondary {
