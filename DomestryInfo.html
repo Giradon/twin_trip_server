@@ -14,7 +14,7 @@
  
     <!--css setting-->
     <link rel="shortcut icon" href="assets/css/images/logo_small.png">
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/materialize.css">
@@ -38,12 +38,12 @@
     
     <style>
         /*지도 부분*/
-        .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+        .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 14px;line-height: 1.5;}
         .wrap * {padding: 0;margin: 0;}
         .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
         .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
-        .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
-        .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+        .info .title {padding: 2px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;margin-left: -1px;letter-spacing: -0.03em;}
+        .info .close {position: absolute;top: 7px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
         .info .close:hover {cursor: pointer;}
         .info .body {position: relative;overflow: hidden;}
         .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
@@ -109,7 +109,7 @@
                         </div>
 
                         <div id="process3">
-                            <div id="map" style="width:100%;height:350px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
+                            <div id="map" style="width:100%;height:450px;margin-top:3px;border:2px solid #b9b2b9c4; border-radius: 10px">
                             </div>          
                         </div> 
                     </div>
@@ -120,6 +120,16 @@
     </section>
     <!-- end main -->
 
+    <!-- Footer -->
+    <footer id="footer">
+
+        <!-- Icons -->
+            <ul class="menu">
+                <li><a style="text-decoration: none !important;" href="http://twintrip.site"><i class="fa fa-home"></i> Home</a></li>
+                <li><a style="text-decoration: none !important;" href="introduction.html"><i class="fa fa-question-circle"></i> About Us</a></li>
+                <li><span style="font-size: 7pt;">본 사이트는 크롬 브라우저, 1920 X 1080 해상도 PC 사용에 최적화 되어 있습니다.</span></li>
+            </ul>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -284,7 +294,7 @@
             }
             else if(pageCount >= 2){ //생성해야할 페이지가 2페이지 이상인 경우
                 // 이전 페이지 추가 실시 
-                var insertSTR = "<li class='page-item'>"; // 변수 선언
+                var insertSTR = "<li class='page-prev'>"; // 변수 선언
                 insertSTR = insertSTR + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage("+"-1"+");'>";
                 insertSTR = insertSTR + "Prev";
                 insertSTR = insertSTR + "</a></li>";
@@ -306,7 +316,7 @@
                 }
 
                 // 다음 페이지 추가 실시
-                var insertEND = "<li class='page-item'>"; // 변수 선언
+                var insertEND = "<li class='page-next'>"; // 변수 선언
                 insertEND = insertEND + "<a class='page-link' href='javascript:void(0)' onclick = 'newPage("+"0"+");'>";
                 insertEND = insertEND + "Next";
                 insertEND = insertEND + "</a></li>";
@@ -381,10 +391,14 @@
                     
                     var insertTr = ""; // 변수 선언
                     // insertTr += "<tr><td rowspan=2><img src='" + thumbnail + "'/>" + "</td>"; // body 에 남겨둔 예시처럼 데이터 삽입
-                    if (thumbnail == ""){insertTr += "<tr><td class='td-img' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
-                    else {insertTr += "<tr><td class='td-img' rowspan=2>" + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";} 
-                    insertTr += "<td class='td-title'>" + '<a href="' + url + '"/a>' + title + "</td></tr>"; 
-                    insertTr += "<tr><td class='td-content'>" + '<a href="' + url + '"/a>'+ contents + "</td></tr>";
+                    // if (thumbnail == ""){insertTr += "<tr><td class='td-img' rowspan=2><img src='https://madison365.com/wp-content/uploads/2015/09/White-Background-worldnews1-150x150.jpg'/>" + "</td>";}
+                    // else {insertTr += "<tr><td class='td-img' rowspan=2>" + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";} 
+                    
+                    insertTr += "<tr><td class='td-img' rowspan=2>" 
+                                + '<a href="' + url + '"/a>' + "<img src='" + thumbnail + "'/>" + "</td>";
+                    insertTr += "<td class='td-title'>" + '<a id ="a_title" href="' + url + '"/a>' + title + "</td></tr>"; 
+                    insertTr += "<tr><td class='td-content'>" 
+                                + '<a id ="a_content" href="' + url + '"/a>'+ contents + "</td></tr>";
                     
                     //else {insertTr += "<tr><td class='td-img' rowspan=2><img src='" + thumbnail + "'/>" + "</td>";}
 
@@ -475,13 +489,12 @@
     
             searchDetailAddrFromCoords(marker.getPosition(), function(result, status) {
                 var address;
-                    if(result.length > 0 && !!result[0].road_address){
-                        address = '<div class="ellipsis" style="white-space: initial;">' + result[0].road_address.address_name + '</div>';
-                         }
-                        else{
-                        address = '<div class="ellipsis" style="white-space: initial;">' + getParameter("Detail_add") + '</div>';
-                        }
-    
+                    if(result.length > 0){
+                        address = !!result[0].road_address ? '<div class="ellipsis" style="white-space: initial;">' + result[0].road_address.address_name + '</div>' : '';
+                         address += '<div class="ellipsis" style="white-space: initial;">지번 : ' + result[0].address.address_name + '</div>';
+                    }else{
+                        address = '<div class="ellipsis" style="white-space: initial;">' + getParameter("Search_Word") + '</div>';
+                    }
   
                 // 커스텀 오버레이 부분
                 var content = '<div class="wrap">' + 
@@ -490,7 +503,7 @@
                                     	getParameter("query") + 
                         '            	<div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
                         '        	</div>' + 
-                        '            	 <div style="margin: 13px;  padding: 0;">' +
+                        '            	 <div style="margin: 11px;  padding: 0;">' +
                                                     address +
                                         '<div><a href="https://map.kakao.com/link/to/'+getParameter("Search_Word")+','+place.y+','+place.x+'" target="_blank" class="link" style="white-space: initial;">⤴️ 길찾기 바로가기</a></div>'+
                         '           </div>' + 
@@ -541,16 +554,6 @@
     </script>
     
     <!-- 지도 script end-->
-    
-    <!-- Footer -->
-    <footer id="footer">
-
-        <!-- Icons -->
-            <ul class="menu">
-                <li><a style="text-decoration: none !important;" href="http://twintrip.site"><i class="fa fa-home"></i> Home</a></li>
-                <li><a style="text-decoration: none !important;" href="introduction.html"><i class="fa fa-question-circle"></i> About Us</a></li>
-            </ul>
-    </footer>
 
 </body>
 

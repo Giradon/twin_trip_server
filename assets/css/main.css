@@ -13,7 +13,7 @@
 /*td, tbody, tfoot, thead, tr, th, table 삭제*/
 html, body, div, span, applet, object, p,
 iframe, h1, h2, h3, h4, h5, h6, blockquote,
-pre, a, abbr, acronym, address, big, cite,
+pre, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
@@ -27,7 +27,18 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	word-break: keep-all;
-	scroll-behavior:smooth
+	scroll-behavior:smooth;
+	}
+
+a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	word-break: break-all;
+	scroll-behavior:smooth;
+	text-decoration: none;
 	}
 
 article, aside, details, figcaption, figure,
@@ -36,6 +47,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	
 }
 
 ol, ul {
@@ -590,7 +602,7 @@ input, select, textarea {
 	h2 {
 		font-size: 1.8em;
 		line-height: 1.5em;
-		letter-spacing: -0.05em;
+		letter-spacing: -0.03em;
 	}
 
 	@media screen and (max-width: 736px) {
@@ -649,7 +661,7 @@ input, select, textarea {
 /* Box */
 
 	.box {
-		background: #ffffff;
+		background: #ffffffb9;
 		color: #39454b;
 		padding: 2em;
 	}
@@ -670,7 +682,7 @@ input, select, textarea {
 
 				.box.style2 {
 					padding: 1.5em 1.25em 1.5em 1.25em;
-					background-color: rgba(255, 255, 255, 0.9);
+					background-color: rgba(255, 255, 255, 0.817);
 				}
 
 		}
@@ -793,14 +805,14 @@ input, select, textarea {
 			}
 
 			button.btn1{
-				width:150px;
+				width:9em;
 				height: 55px;
-				color:rgba(82, 82, 82);
-				background: #ffffff;
+				color:#444;
+				background:  #dcdbdcd6;
 				font-size: 16px;
 				border:none;
 				border-radius: 30px;
-				box-shadow: 0 2px 5px rgba(225, 225, 225, 0.65);
+				box-shadow: 0 6px 10px rgb(0 0 0 / 10%);
 				transition:0.2s;
 				position: relative;
 				z-index: 1;
@@ -808,7 +820,7 @@ input, select, textarea {
 				text-align: center;
 				touch-action: manipulation;
 				white-space: nowrap;
-				font-family: Noto Sans KR;
+				font-family: "Noto Sans KR";
 				font-weight: 600;
 
 			}
@@ -2594,6 +2606,7 @@ input, select, textarea {
 
 			.main2.style3-2.primary {
 				background: #ffffff;
+				min-height: 100%
 			}
 
 			.main2.style3-2.secondary {
@@ -3133,11 +3146,11 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.tiles {
-				margin: 30px 0 0 0;
+				margin: -1.5em 0 0 0.45em;
 			}
 
 				.tiles article {
-					width: calc(48% - 0.75px);
+					width: calc(47% - 0.75px);
 					margin: 4px 4px 4px 4px;
 				}
 		}
@@ -3354,7 +3367,7 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.tiles2 {
-					margin: 0em -2.8em -20px -3em;
+					margin: 0em -2.5em -20px -2.7em;
 				}
 	
 					.tiles2 article {
@@ -3406,7 +3419,7 @@ input, select, textarea {
 	  width: 55%; 
 	  }
 	  #banner .images img {
-		height: 100%;
+		height: auto;
 		-moz-object-fit: cover;
 		-webkit-object-fit: cover;
 		-ms-object-fit: cover;
@@ -3492,7 +3505,7 @@ input, select, textarea {
 	  width: 55%; 
 	  }
 	  #banner .images img {
-		height: 100%;
+		height: auto;
 		-moz-object-fit: cover;
 		-webkit-object-fit: cover;
 		-ms-object-fit: cover;
@@ -3578,7 +3591,7 @@ input, select, textarea {
 		width: 55%; 
 		}
 		#banner2 .images img {
-		height: 100%;
+		height: auto;
 		-moz-object-fit: cover;
 		-webkit-object-fit: cover;
 		-ms-object-fit: cover;
@@ -3673,17 +3686,7 @@ input, select, textarea {
 
 		/*blog page*/
 
-		/*title h3 간격 조정 from sytle.css*/
-
-		.pages-title .title {
-			font-size: 22px;
-			font-weight: 600;
-		}
-
-
-		/*===================
-		  process from style.css
-		===================*/
+		/* process from style.css*/
 		.process-app .tabs .tab {
 			background: #eee;
 		}
@@ -3792,12 +3795,12 @@ input, select, textarea {
 		}
 
 		.tabs .tab a{
-			color:rgba(238,110,115,0.7);
+			/* color:rgba(238,110,115,0.7); */
 			display:block;
 			width:100%;
 			height:100%;
 			padding:0 24px;
-			font-size:14px;
+			font-size:15px;
 			text-overflow:ellipsis;
 			overflow:hidden;
 			transition:color .28s ease
@@ -3805,7 +3808,7 @@ input, select, textarea {
 
 		.tabs .tab a:hover,.tabs .tab a.active{
 			background-color:transparent;
-			color:#ee6e73
+			/* color:#ee6e73 */
 		}
 
 		.tabs .tab.disabled a,.tabs .tab.disabled a:hover{
@@ -3886,7 +3889,7 @@ input, select, textarea {
         .td-three{width: 20%; border-bottom: 1px solid #e0e0e0; padding-bottom:5px} */
 
         /*pc화면*/
-        @media only screen and (min-width: 768px){
+        /* @media only screen and (min-width: 768px){
 			.td-img{
 				width: 2%; 
 				padding-bottom:3px; 
@@ -3910,12 +3913,12 @@ input, select, textarea {
 				line-height: 1.5em;
 			}
 
-		}
+		} */
 
-        /*모바일 화면*/
+        /*td*/
         .td-img{
 			width: 2%; 
-			padding-bottom:3px; 
+			/* padding-bottom:3px;  */
 			text-align:center;
 		}
 		.td-img img {
@@ -3929,27 +3932,57 @@ input, select, textarea {
 		
 		
 		.td-title{
-            font-size: 12pt;
+            /* border-top: 4px solid #e0e0e0;  */
+			border-bottom: 4px solid #ffff; 
+			/* padding-bottom:3px;  */
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;  
+			overflow: hidden;
+			width: 100%;
+			font-size:13pt;
+			font-weight: 900;
         }
 
         .td-content{
-			border-bottom: 1px solid #e0e0e0; 
+			border-bottom: 4px solid #ffff; 
 			padding-bottom:3px; 
 			display: -webkit-box;
 			-webkit-line-clamp: 4;
 			-webkit-box-orient: vertical;  
 			overflow: hidden;
 			width: 100%;
-			font-size:12pt;
+			font-size:11pt;
 		}
 
+			td.td-content a#a_content > b{
+				font-weight:normal;
+			}
+
 		/*pagination style*/
-		.pagination li a{
-			color:#444;
+		.pagination .page-item{
+				color:#444;
+				display:inline-block;
+				font-size:1rem;
+				padding:0 10px;
+				margin: 2px;
+				line-height:30px;
+				background: #eee;
+				border-radius: 5px;
+				font-weight: 700;
+		}
+
+		.pagination .page-prev, .page-next{
+			color:rgb(0, 0, 0);
 			display:inline-block;
-			font-size:1.2rem;
+			font-size:1rem;
 			padding:0 10px;
-			line-height:30px
+			margin: 2px;
+			line-height:30px;
+			background: #eee;
+    		border-radius: 5px;
+			font-weight: 900;
+    		
 		}
         .page-item a.on:focus  {
 			color:#ff0000; 
@@ -3957,17 +3990,19 @@ input, select, textarea {
 		}
 
 		/*table*/
-		table{
+		/* table{
 			width:100%;
-			display:table
+			display:table;
 		}
 
 		table,th,td{
-			border:none
-		}
+			border:none;
+		} */
 		
 		/* .bordered > td{
 			word-break: break-all;
 		} */
 
+		
 
+		
