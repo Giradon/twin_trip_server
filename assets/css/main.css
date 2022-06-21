@@ -2566,6 +2566,51 @@ input, select, textarea {
 			.main.style3.secondary {
 				background: #f5f6f7;
 			}
+
+		.main.style4 {
+			text-align: center;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			overflow: hidden;
+
+		}
+
+			.main.style4.primary {
+				background: #ffffff;
+				padding: 0em 0 0em 0 ;
+			}
+			
+			.main.style4 h2 {
+				font-size: 60px;
+				color: mediumorchid;					
+				line-height: 1em;
+				padding: 1em 0 0.5em 0 ;					
+			}
+
+		.main.style5 {
+			text-align: center;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			overflow: hidden;
+			padding: 0em 0 10em 0 ;
+
+		}			
+		
+			.main.style5 a {					
+				font-size: 20px;					
+			}
 		
 
 		/*0615 blog 지도 탭 사이즈 조정*/
@@ -2688,7 +2733,7 @@ input, select, textarea {
 				}
 
 			.main.style2 {
-				padding: 5em 0px 4em 0px;
+				padding: 4em 0px 4em 0px;
 			}
 
 				.main.style2:before, .main.style2:after {
@@ -2714,16 +2759,16 @@ input, select, textarea {
 				margin: -1em 0 -1em 0;
 			}
 			
-			.main.style4 {
-				padding: 0 0 1em 0 !important;
-			}
+
 			
-				.main.style4 h2 {
-					font-family: "Noto Sans KR", "sans-serif";
-					
-					font-size: 2.2em !important;
-					line-height: 1em;					
-				}
+			.main.style4 h2 {					
+				font-size: 42px !important;
+				line-height: 1em;
+				padding: 0em 0 1em 0;				
+			}
+
+			
+			
 		}
 
 
@@ -2734,42 +2779,22 @@ input, select, textarea {
 				max-width: calc(100% - 0.2em);
 			}
 
-		}
-		.main.style4 {
-			-moz-align-items: center;
-			-webkit-align-items: center;
-			-ms-align-items: center;
-			align-items: center;
-			-moz-justify-content: center;
-			-webkit-justify-content: center;
-			-ms-justify-content: center;
-			justify-content: center;
-			text-align: center;
-			padding: 3em 0 1em 0;
-		}
 
-			.main.style4 h2 {
-				font-size: 3em;
-				color: mediumorchid;
+			
+			.main.style4 h2 {					
+				font-size: 36px !important;
 				line-height: 1em;
+				padding: 0em 0 0.4em 0;					
 			}
 
-			.main.style4 > .content {
-				-moz-transition: opacity 1s ease;
-				-webkit-transition: opacity 1s ease;
-				-ms-transition: opacity 1s ease;
-				transition: opacity 1s ease;
-				-moz-transform: translateZ(0);
-				-webkit-transform: translateZ(0);
-				-ms-transform: translateZ(0);
-				transform: translateZ(0);
-				opacity: 1.0;
-				margin: 0;
+			.main.style5 a {					
+				font-size: 17px !important;
+				line-height: 1em;
+				padding: 0em 0 0em 0;				
 			}
 
-			.main.style4.inactive > .content {
-				opacity: 0;
-			}
+		}
+			
 
 
 /* Footer */
@@ -3403,7 +3428,7 @@ input, select, textarea {
 	  -ms-flex-shrink: 1;
 	  flex-shrink: 1;
 	  width: 40%;
-	  padding: 4em 0em 0em 0em; }
+	  padding: 2em 0em 0em 0em; }
 	#banner .images {
 	  -moz-flex-grow: 0;
 	  -webkit-flex-grow: 0;
@@ -3415,7 +3440,7 @@ input, select, textarea {
 	  flex-shrink: 0;
 	  display: block;
 	  margin: 0 0 0em 0em;
-	  padding: 4em 2em 4em 14em;
+	  padding: 2em 2em 4em 14em;
 	  width: 55%; 
 	  }
 	  #banner .images img {
@@ -3488,7 +3513,7 @@ input, select, textarea {
 	  -ms-flex-shrink: 1;
 	  flex-shrink: 1;
 	  width: 40%;
-	  padding: 4em 0em 0em 0em;
+	  padding: 2em 0em 0em 0em;
 	  }
 	#banner .images {
 	  -moz-flex-grow: 0;
@@ -3501,7 +3526,7 @@ input, select, textarea {
 	  flex-shrink: 0;
 	  display: block;
 	  margin: 0 0 0em 0em;
-	  padding: 4em 2em 4em 14em;
+	  padding: 2em 2em 4em 14em;
 	  width: 55%; 
 	  }
 	  #banner .images img {
@@ -3575,7 +3600,7 @@ input, select, textarea {
 		-ms-flex-shrink: 1;
 		flex-shrink: 1;
 		width: 40%;
-		padding: 4em 0em 0em 14em; }
+		padding: 1em 0em 0em 14em; }
 	#banner2 .images {
 		-moz-flex-grow: 0;
 		-webkit-flex-grow: 0;
@@ -3587,7 +3612,7 @@ input, select, textarea {
 		flex-shrink: 0;
 		display: block;
 		margin: 0 0 0em 0em;
-		padding: 4em 14em 4em 2em;
+		padding: 1em 14em 4em 2em;
 		width: 55%; 
 		}
 		#banner2 .images img {
@@ -3642,47 +3667,6 @@ input, select, textarea {
 		#banner2 .images {
 		max-height: 35vh; } }		
 		
-/* Contact */
-
-	#contact {
-		overflow: hidden;
-		padding-bottom: 0;
-	}
-
-		#contact .box {
-			-moz-transition: -moz-transform 1s ease;
-			-webkit-transition: -webkit-transform 1s ease;
-			-ms-transition: -ms-transform 1s ease;
-			transition: transform 1s ease;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			position: relative;
-		}
-
-		#contact.inactive .box {
-			-moz-transform: translateY(100%);
-			-webkit-transform: translateY(100%);
-			-ms-transform: translateY(100%);
-			transform: translateY(100%);
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#contact .box {
-				padding: 1.5em 1.5em 2em 1.5em;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			#contact .box {
-				padding: 1em 1em 2em 1em;
-			}
-
-		}
 
 		/*blog page*/
 
