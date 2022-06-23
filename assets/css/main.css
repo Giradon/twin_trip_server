@@ -3939,9 +3939,13 @@ input, select, textarea {
 			font-size:11pt;
 		}
 
-			td.td-content a#a_content > b{
-				font-weight:normal;
+		@media only screen and (max-width: 768px){
+			 .td-content{
+				font-size: 9pt;
+				line-height: 2em;
 			}
+
+		}
 
 		/*pagination style*/
 		.pagination .page-item{
