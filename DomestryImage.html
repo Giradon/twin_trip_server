@@ -232,7 +232,42 @@
 	</script> 
 	</body>
 
-	<!-- Top-up -->			
-	<a style="display:scroll;position:fixed;bottom:30px;right:15px;z-index:2;" rel="nofollow"
-	href="#" title="Back to Top"><img src="assets/css/images/topup.png" style= "height:3em" border="0" /></a>
+<!-- PC TOP 버튼 HTML -->
+<div onclick="topFunction()" id="scrollTopPc" class="d-none d-sm-block, d-sm-none d-md-block" >
+    <img src="assets/css/images/btn_up_light.png" height="40px">
+</div> 
+
+<!-- PC DOWN 버튼 HTML -->
+<div onclick="downFunction()" id="scrollDownPc" class="d-none d-sm-block, d-sm-none d-md-block" >
+    <img src="assets/css/images/btn_down_light.png" height="40px">
+</div> 
+
+
+<!-- 상단/하단 이동 스크롤 스크립트 -->
+<script>
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("scrollTopPc").style.display = "block";
+        document.getElementById("scrollDownPc").style.display = "block";
+
+    } else {
+        document.getElementById("scrollTopPc").style.display = "none";
+        document.getElementById("scrollDownPc").style.display = "none";
+
+    }
+}
+
+// PC TOP 버튼 동작
+function topFunction() {
+    $('html,body').animate({ scrollTop: 0 }, 500);
+}
+
+// PC DOWN 버튼 동작
+function downFunction() {
+    $('html, body').animate({ scrollTop: $('#footer').offset().top }, 500);
+}
+
+</script>
 </html>
